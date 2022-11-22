@@ -5,125 +5,250 @@
         Lista
     </title>
   <style>
-      #searchbar{
-     margin-left: 15%;
-     padding:15px;
-     border-radius: 10px;
-   }
- 
-   input[type=text] {
-      width: 30%;
-      -webkit-transition: width 0.15s ease-in-out;
-      transition: width 0.15s ease-in-out;
-   }
- 
-   /* When the input field gets focus,
-        change its width to 100% */
-   input[type=text]:focus {
-     width: 70%;
-   }
- 
-  #list{
-    font-size:  1.5em;
-    margin-left: 90px;
-   }
- 
-.animals{
-   display: list-item;    
-  } 
+      body {
+  font-family: "Roboto Mono", monospace;
+  font-size: 20px;
+  background-color: #111;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
-.font{
-  margin-top: 100px;
+#searchbar {
+  margin-left: 40%;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+table {
+  background: black;
+  margin: 10%;
+}
+
+th, tr, td {
+  border: solid 1px white;
+  color: white;
+}
+
+.problem {
+  background: red;
+}
+
+.duvida {
+  background: #FFA500;
+}
+
+.pago {
+  background: green;
 }
   </style>
       
-    <!-- linking the stylesheet(CSS) -->
-    <link rel="stylesheet" type="text/css" href="./style.css">
 </head>
   
 <body>
-      
-    <!-- input tag -->
-    <input id="searchbar" onkeyup="search_animal()" type="text"
+  
+<table>
+
+    <thead>
+      <input id="searchbar" onkeyup="search_garoto()" type="text"
         name="search" placeholder="Nome/ Celular">
-      
-    <!-- ordered list -->
-    <ol id='list'>
-        <li class="animals">Nome - Número - Resposta - Pagamento - Data da Checagem</li>
-        <li class="animals">Pedro de Carvalho Lins - 61 994046505
- - Confirmado - Pago 120,00 - (22/11)</li>
-        <li class="animals">Lucas Mamede John
- - 61992022500 - Confirmado - Pago 300,00 - (22/11)</li>
-        <li class="animals">Davi Arifa Aguiar
- - +55 61 98154-2247 - Confirmado - Pago 100,00 - (22/11)</li>
-        <li class="animals">Ian Hosana de Olivira Dias
- - 61 981442872 - Confirmado - Pago 350,00 - (22/11)</li>
-        <li class="animals">Samuel Perpétuo Angelini Vidigal de Oliveira
- - (61) 9.9337-9679 - Confirmado - Pago 100,00 - (22/11)</li>
-        <li class="animals">Gustavo de Lima e Silva Alves 
- - 61999192933 - Confirmado - Pago 350,00 - (22/11)</li>
-        <li class="animals">Eduardo Folador Garcia 
- - 061995577890 - Confirmado - Pago 300,00 - (22/11)</li>
-        <li class="animals">Davi José Petrillo de Araujo
- - 61 981260209 - Confirmado - Pago 300,00 - (22/11)</li>
-        <li class="animals">Eduardo José Petrillo de Araujo - 61981260281 - Confirmado - Pago 300,00 - (22/11)</li>
-        <li class="animals">Gabriel de Almeida Takaki 
- - (61) 99152-8664
- - Confirmado - Pago 300,00 - (22/11)</li>
-        <li class="animals">João Pedro Araujo Soares
- - 61998832999 - Confirmado - Pago 300,00 - (22/11)</li>
-        <li class="animals">Alexandre Salgado Talhaferro
- - 19971617565
- - Confirmado - Pago 100,00 - (22/11)</li>
-        <li class="animals">Gabriel Macêdo Santos
- - (61) 95039242
- - Confirmado - Pago 100,00 - (22/11)</li>
-        <li class="animals">Thiago Macêdo Santos
- - 61 9503-9242
- - Confirmado - Mesmo comprovante de Gabriel Macêdo Santos (Situação extraordinária/ não cobrar) - (22/11)</li>
-        <li class="animals">Arthur Monteiro Alves Venancio Pires 
- - 61999670789 - Confirmado - Pago 100,00 - (22/11)</li>
-        <li class="animals">João Alcântara Farias de Sousa Lima 
- - (61)99957-8730
- - Confirmado - Pago? - (22/11)</li>
-        <li class="animals">Filipe Bernardes Silva
- - 61 98118-8233 mãe
- - Confirmado - Pago 100,00 - (22/11)</li>
-        <li class="animals">Felipe Teles dos Reis 
- - 61991007331
- - Confirmado - Pago 300,00 - (22/11)</li>
-        <li class="animals">Davi Seidel Brandão - 61 991866857
- - Confirmado - Pago 350,00 - (22/11)</li>
-        <li class="animals">Daniel Takao Kobayashi Santos Ribeiro
- - 61 986643511
- - Confirmado - Pago 150,00 - (22/11)</li>
-        <li class="animals">Bruno Grandi Feil
- - 61998511971 - Confirmado - Pago 350,00 - (22/11)</li>
-        <li class="animals">Kalil Chaves Albuquerque 
- - 61981227134 - Confirmado - Pago 300,00 - (22/11)</li>
-        <li class="animals">Erick Chaves Albuquerque 
- - 61981227134 - Confirmado - Mesmo comprovante do Kalil Chavez Albuquerque - (22/11)</li>
-    </ol>
-      
-    <form class="font"> Fonte das Informações: https://docs.google.com/forms/d/1o1mCtKQnmOLmx9C1dN8qNlNZXVqmqV_jaLpOxVyGpLI/edit?chromeless=1#response=ACYDBNjETCo_BnsRlUi8FQ82NNEmfO2yeMQsHLfCMeiOw0ors6YtEIxUE4ajswHjRBe07xs </form>
-    <!-- linking javascript -->
-    <script>
-      // JavaScript code
-function search_animal() {
+
+      <tr>
+        <th> Nome </th>
+        <th> Celular </th>
+        <th> Inscrição </th>
+        <th> Pagamento </th>
+        <th> Checado em: </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="garoto">
+        <td> Pedro de Carvalho Lins </td>
+        <td> 61994046505 </td>
+        <td> Inscrito </td>
+        <td class="pago"> Efetuado </td>
+        <td> 22/11 </td>
+      </tr>
+      <tr class="garoto">
+        <td> Lucas Mamede John </td>
+        <td> 61992022500  </td>
+        <td> Inscrito </td>
+        <td class="pago"> Efetuado </td>
+        <td> 22/11 </td>
+      </tr>
+      <tr class="garoto">
+        <td> Davi Arifa Aguiar </td>
+        <td> 61981542247 </td>
+        <td> Inscrito </td>
+        <td class="pago"> Efetuado </td>
+        <td> 22/11 </td>
+      </tr>
+      <tr class="garoto">
+        <td> Ian Hosana de Olivira Dias </td>
+        <td> 61981442872 </td>
+        <td> Inscrito </td>
+        <td class="pago"> Efetuado </td>
+        <td> 22/11 </td>
+      </tr>
+      <tr class="garoto">
+        <td> Samuel Perpétuo Angelini Vidigal de Oliveira </td>
+        <td>  61993379679 </td>
+        <td> Inscrito </td>
+        <td class="pago"> Efetuado </td>
+        <td> 22/11 </td>
+      </tr>
+      <tr class="garoto">
+        <td> Gustavo de Lima e Silva Alves </td>
+        <td> 61999192933  </td>
+        <td> Inscrito </td>
+        <td class="pago"> Efetuado </td>
+        <td> 22/11 </td>
+      </tr>
+      <tr class="garoto">
+        <td> Eduardo Folador Garcia </td>
+        <td> 61995577890  </td>
+        <td> Inscrito </td>
+        <td class="pago"> Efetuado </td>
+        <td> 22/11 </td>
+      </tr>
+      <tr class="garoto">
+        <td> Davi José Petrillo de Araujo </td>
+        <td> 61981260209 </td>
+        <td> Inscrito </td>
+        <td class="pago"> Efetuado </td>
+        <td> 22/11 </td>
+      </tr>
+      <tr class="garoto">
+        <td> Eduardo José Petrillo de Araujo </td>
+        <td> 61981260281  </td>
+        <td> Inscrito </td>
+        <td class="pago"> Efetuado </td>
+        <td> 22/11 </td>
+      </tr>
+      <tr class="garoto">
+        <td> Gabriel de Almeida Takaki </td>
+        <td> 61991528664 </td>
+        <td> Inscrito </td>
+        <td class="pago"> Efetuado </td>
+        <td> 22/11 </td>
+      </tr>
+      <tr class="garoto">
+        <td> João Pedro Araujo Soares </td>
+        <td> 61998832999  </td>
+        <td> Inscrito </td>
+        <td class="pago"> Efetuado </td>
+        <td> 22/11 </td>
+      </tr>
+      <tr class="garoto">
+        <td> Alexandre Salgado Talhaferro </td>
+        <td> 19971617565  </td>
+        <td> Inscrito </td>
+        <td class="pago"> Efetuado </td>
+        <td> 22/11 </td>
+      </tr>
+      <tr class="garoto">
+        <td class="problem"> Gabriel Macêdo Santos </td>
+        <td class="problem"> 6195039242 </td>
+        <td class="problem"> Inscrito </td>
+        <td class="problem"> Problema1 </td>
+        <td class="problem"> 22/11 </td>
+      </tr>
+      <tr class="garoto">
+        <td class="problem"> Thiago Macêdo Santos </td>
+        <td class="problem"> 6195039242 </td>
+        <td class="problem"> Inscrito </td>
+        <td class="problem"> Problema1 </td>
+        <td class="problem"> 22/11 </td>
+      </tr>
+      <tr class="garoto">
+        <td> Arthur Monteiro Alves Venancio Pires </td>
+        <td> 61999670789  </td>
+        <td> Inscrito </td>
+        <td class="pago"> Efetuado </td>
+        <td> 22/11 </td>
+      </tr>
+      <tr class="garoto">
+        <td class="duvida"> João Alcântara Farias de Sousa Lima </td>
+        <td class="duvida"> 61999578730 </td>
+        <td class="duvida"> Inscrito </td>
+        <td class="duvida"> Dúvida </td>
+        <td class="duvida"> 22/11 </td>
+      </tr>
+      <tr class="garoto">
+        <td> Filipe Bernardes Silva </td>
+        <td> 61981188233 (mãe) </td>
+        <td> Inscrito </td>
+        <td class="pago"> Efetuado </td>
+        <td> 22/11 </td>
+      </tr>
+      <tr class="garoto">
+        <td> Felipe Teles dos Reis </td>
+        <td> 61991007331  </td>
+        <td> Inscrito </td>
+        <td class="pago"> Efetuado </td>
+        <td> 22/11 </td>
+      </tr>
+      <tr class="garoto">
+        <td> Davi Seidel Brandão </td>
+        <td> 61991866857 </td>
+        <td> Inscrito </td>
+        <td class="pago"> Efetuado </td>
+        <td> 22/11 </td>
+      </tr>
+      <tr class="garoto">
+        <td> Daniel Takao Kobayashi Santos Ribeiro </td>
+        <td> 61986643511 </td>
+        <td> Inscrito </td>
+        <td class="pago"> Efetuado </td>
+        <td> 22/11 </td>
+      </tr>
+      <tr class="garoto">
+        <td> Bruno Grandi Feil </td>
+        <td> 61998511971  </td>
+        <td> Inscrito </td>
+        <td class="pago"> Efetuado </td>
+        <td> 22/11 </td>
+      </tr>
+      <tr class="garoto">
+        <td class="problem"> Kalil Chaves Albuquerque </td>
+        <td class="problem"> 61981227134  </td>
+        <td class="problem"> Inscrito </td>
+        <td class="problem"> Problema2 </td>
+        <td class="problem"> 22/11 </td>
+      </tr>
+      <tr class="garoto">
+        <td class="problem"> Erick Chaves Albuquerque </td>
+        <td class="problem"> 61981227134  </td>
+        <td class="problem"> Inscrito </td>
+        <td class="problem"> Problema2 </td>
+        <td class="problem"> 22/11 </td>
+      </tr>
+      <tr class="garoto">
+        <td> Nome </td>
+        <td> Celular </td>
+        <td> Resposta </td>
+        <td> Pagamento </td>
+        <td> Data </td>
+      </tr>
+    </tbody>
+</table>
+  
+ <script>
+   // JavaScript code
+function search_garoto() {
     let input = document.getElementById('searchbar').value
     input=input.toLowerCase();
-    let x = document.getElementsByClassName('animals');
+    let x = document.getElementsByClassName('garoto');
       
     for (i = 0; i < x.length; i++) { 
         if (!x[i].innerHTML.toLowerCase().includes(input)) {
             x[i].style.display="none";
         }
         else {
-            x[i].style.display="list-item";                 
+            x[i].style.display="";                 
         }
     }
 }
-    </script>
+ </script>  
+
 </body>
-  
-</html>
